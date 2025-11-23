@@ -1,7 +1,7 @@
 /* BASIC STYLING */
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-color: #0d0d0d;
   color: #fff;
   scroll-behavior: smooth;
@@ -25,7 +25,7 @@ body {
 .navbar-left h2 {
   margin: 0;
   font-weight: 700;
-  color: #004de6;
+  color: #00A8FF;
 }
 
 .navbar-left a, .navbar-right a {
@@ -34,12 +34,10 @@ body {
   margin: 0 10px;
   transition: 0.3s;
   font-size: 15px;
-  position: relative;
-  z-index: 10;
 }
 
 .navbar-left a:hover, .navbar-right a:hover {
-  color: #004de6;
+  color: #00A8FF;
   transform: scale(1.1);
 }
 
@@ -47,87 +45,44 @@ body {
   display: flex;
   align-items:center;
   gap: 10px;
-  margin-right: 70px;
 }
 
 .get-started {
-  background: #004de6;
+  background: linear-gradient(45deg,#00A8FF,#1DE9B6);
   color: white;
   border: none;
   border-radius: 25px;
   padding: 8px 18px;
   cursor: pointer;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-/* BMW-STYLE NAVIGATION BACKGROUND TEXT */
-.navbar-left a::after {
-  content: attr(data-bg);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1.5);
-  font-size: 5rem;
-  color: rgba(0, 77, 230, 0.05);
-  white-space: nowrap;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  z-index: 1;
+.get-started:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00A8FF;
 }
 
-.navbar-left a:hover::after {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1.6);
+.login-btn {
+  color: #ccc;
+  transition: 0.3s;
 }
 
-/* BUTTONS HOVER BACKGROUND TEXT */
-.navbar-right .get-started,
-.navbar-right .login-btn {
-  position: relative;
-  z-index: 10;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.navbar-right .get-started::after,
-.navbar-right .login-btn::after {
-  content: attr(data-bg);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1.5);
-  font-size: 4.5rem;
-  color: rgba(0, 77, 230, 0.05);
-  white-space: nowrap;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  z-index: 1;
-}
-
-.navbar-right .get-started:hover::after,
-.navbar-right .login-btn:hover::after {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1.6);
-}
-
-.navbar-right .get-started:hover,
-.navbar-right .login-btn:hover {
+.login-btn:hover {
+  color: #00A8FF;
   transform: scale(1.05);
 }
 
 /* HERO SECTION */
 .hero {
-  background: linear-gradient(to right, #000, #1a1a1a);
+  background: linear-gradient(to right, #000, #111), url('https://images.unsplash.com/photo-1593079831268-3381b0db4a77');
+  background-size: cover;
+  background-position: center;
   text-align: center;
   padding: 150px 20px 100px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-image: url('https://images.unsplash.com/photo-1593079831268-3381b0db4a77');
-  background-size: cover;
-  background-position: center;
   position: relative;
 }
 
@@ -135,17 +90,27 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .hero h1, .hero p, .hero button {
   position: relative;
   z-index: 1;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+.hero.show h1,
+.hero.show p,
+.hero.show button {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .hero h1 {
   font-size: 3rem;
-  color: #004de6;
+  color: #00A8FF;
   margin-bottom: 15px;
 }
 
@@ -156,7 +121,7 @@ body {
 }
 
 .hero button {
-  background-color: #004de6;
+  background-color: #00A8FF;
   border: none;
   color: white;
   font-size: 1rem;
@@ -166,15 +131,19 @@ body {
   transition: all 0.3s ease;
 }
 
-.hero button:hover {
-  transform: scale(1.05);
-}
-
 /* SECTION STYLING */
 .section {
   text-align: center;
   padding: 100px 20px;
   background: #111;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+.section.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .section:nth-child(even) {
@@ -182,9 +151,10 @@ body {
 }
 
 .section h2 {
-  color: #004de6;
+  color: #00A8FF;
   margin-bottom: 20px;
   font-size: 2rem;
+  font-weight: 700;
 }
 
 .section p {
@@ -200,7 +170,7 @@ body {
   max-width: 500px;
   border-radius: 15px;
   margin-top: 30px;
-  box-shadow: 0 0 20px rgba(0, 102, 255, 0.4);
+  box-shadow: 0 0 20px rgba(0, 168, 255, 0.4);
   transition: transform 0.4s;
 }
 
@@ -235,9 +205,4 @@ body {
   .hero h1 { font-size: 2.2rem; }
   .navbar { padding: 10px 25px; }
   .instagram-btn { bottom: 15px; left: 15px; width: 35px; height: 35px; }
-  .navbar-left a::after,
-  .navbar-right .get-started::after,
-  .navbar-right .login-btn::after {
-    font-size: 3rem;
-  }
 }
