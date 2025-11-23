@@ -3,102 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <title>Welcome To The Gym World Of MH</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 <body>
 
-  <!-- NAVBAR -->
   <nav class="navbar">
     <div class="navbar-left">
       <h2>Muhammad Hussain Fitness</h2>
       <a href="#about">About</a>
-      <a href="#history">Gym History</a>
       <a href="#training">Training</a>
       <a href="#motivation">Motivation</a>
-      <a href="#whychoose">Why Choose Us</a>
       <a href="#contact">Contact</a>
     </div>
-  <div class="navbar-right">
-      <a href="login/login.html">Log In</a>
-     <button class="get-started" onclick="window.location.href='join.html'">Join Now</button>
+    <div class="navbar-right">
+      <!-- Join Now Button -->
+<button class="get-started" onclick="window.location.href='join.html'">Join Now</button>
+
+<!-- Login Button -->
+<a href="login.html" class="login-btn">Log In</a>
+
   </nav>
 
-  <!-- HERO SECTION -->
   <section class="hero" id="home">
-    <div class="hero-bg"></div> <!-- Subtle gym background -->
     <h1>Welcome To The Gym World Of <br>Muhammad Hussain Fitness</h1>
-    <p>Transform your body. Transform your life.<br>Push harder than yesterday for a stronger tomorrow.</p>
+    <p>Transform your body. Transform your life.<br>Push harder than yesterday if you want a different tomorrow.</p>
     <button onclick="document.querySelector('#training').scrollIntoView({ behavior: 'smooth' });">Start Training</button>
   </section>
 
-  <!-- ABOUT SECTION -->
   <section class="section" id="about">
     <h2>About Our Gym</h2>
     <p>We’re not just a gym — we’re a community of athletes, dreamers, and achievers. Whether you’re starting your fitness journey or taking it to the next level, our mission is to help you unleash your full potential.</p>
     <img src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74" alt="Gym Equipment">
-  </section>
-
-  <!-- GYM HISTORY SECTION -->
-  <section class="section" id="history">
-    <h2>Our Gym History</h2>
-    <p>Founded with a vision to empower fitness enthusiasts, Muhammad Hussain Fitness has grown from a small local gym into a thriving community. Our journey is a testament to dedication, discipline, and the love for health and wellness.</p>
-    <img src="https://images.unsplash.com/photo-1599058917216-44c2b2a1d051" alt="Gym History Image">
-  </section>
-
-  <!-- TRAINING SECTION -->
-  <section class="section" id="training">
+<section class="section" id="training">
     <h2>Training Programs</h2>
     <p>From intense strength sessions to endurance training, we offer customized plans that fit your body and your goals. Every rep counts — and every day brings you closer to greatness.</p>
     <img src="https://images.unsplash.com/photo-1579758629934-095f8ab13908" alt="Training Session">
   </section>
 
-  <!-- MOTIVATION SECTION -->
-  <section class="section" id="motivation">
+
+   
+  </section>
+
+ <section class="section" id="motivation">
     <h2>Stay Motivated</h2>
     <p>"Success isn’t always about greatness. It’s about consistency. Consistent hard work gains success. Greatness will come."</p>
     <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438" alt="Motivational Gym Image">
   </section>
 
-  <!-- WHY CHOOSE US SECTION -->
-  <section class="section" id="whychoose">
-    <h2>Why Choose Muhammad Hussain Fitness</h2>
-    <p>Expert trainers, modern equipment, personalized programs, and a motivating environment — we give you the tools to succeed in your fitness journey.</p>
-    <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1" alt="Why Choose Us">
-  </section>
-
-  <!-- CONTACT / JOIN SECTION -->
-  <section class="section" id="contact">
+   <section class="section" id="contact">
     <h2>Join the Movement</h2>
     <p>Ready to take the first step toward your best self? Join our gym family today and let’s make every day count.</p>
-    <button class="get-started" onclick="window.location.href='join.html'">Join Now</button>
+    <button class="get-started">Join Now</button>
   </section>
-
   <!-- Instagram Floating Button -->
-  <a href="https://www.instagram.com/m.hussainshaikhh/" target="_blank" class="instagram-btn">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
-  </a>
+<a href="https://www.instagram.com/m.hussainshaikhh/" target="_blank" class="instagram-btn">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+</a>
 
-  <!-- JS FOR SCROLL ANIMATIONS -->
-  <script>
-    const sections = document.querySelectorAll('.section, .hero');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('show');
-        }
-      });
-    }, { threshold: 0.1 });
 
-    sections.forEach(section => {
-      observer.observe(section);
-    });
-  </script>
 
 </body>
+
 </html>
-
-
-
-
