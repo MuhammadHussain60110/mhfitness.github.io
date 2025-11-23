@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Join Now - Muhammad Hussain Fitness</title>
+  <link rel="stylesheet" href="join.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Join Now</h2>
+
+    <!-- FormSubmit ke liye action add kiya -->
+    <form id="joinForm" action="https://formsubmit.co/mhussainhero87@gmail.com" method="POST">
+      
+      <!-- Hidden fields for email setup -->
+      <input type="hidden" name="_subject" value="New Member Added">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://yourdomain.com/join.html">
+
+      <label for="fullname">Full Name:</label>
+      <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+
+      <label for="fathername">Father’s Name:</label>
+      <input type="text" id="fathername" name="fathername" placeholder="Enter your father’s name" required>
+
+      <label for="nic">CNIC Number:</label>
+      <input type="text" id="nic" name="nic" placeholder="e.g. 12345-6789012-3" required>
+
+      <label for="religion">Religion:</label>
+      <select id="religion" name="religion" required>
+        <option value="">Select religion</option>
+        <option>Islam</option>
+        <option>Christianity</option>
+        <option>Hinduism</option>
+        <option>Other</option>
+      </select>
+
+      <label for="address">Address:</label>
+      <textarea id="address" name="address" rows="3" placeholder="Enter your address" required></textarea>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" placeholder="03XX-XXXXXXX" required>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div class="confirmation" id="confirmationMessage">
+      ✅ Thank you for joining Muhammad Hussain Fitness! <br>
+      Our team will contact you soon.
+    </div>
+
+    <a href="../index.html" class="back-link">← Back to Home</a>
+  </div>
+
+  <script>
+    const form = document.getElementById('joinForm');
+    const confirmation = document.getElementById('confirmationMessage');
+
+    form.addEventListener('submit', (e) => {
+      // Confirmation message show karne ke liye timeout use karenge taake email bhi send ho jaye
+      setTimeout(() => {
+        form.style.display = 'none';
+        confirmation.style.display = 'block';
+      }, 100);
+    });
+  </script>
+</body>
+</html>
