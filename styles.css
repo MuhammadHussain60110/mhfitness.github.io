@@ -36,7 +36,7 @@ img {
   z-index: 100;
 }
 
-.navbar-left h2 {
+.navbar-left h1 {
   margin: 0;
 }
 
@@ -44,11 +44,11 @@ img {
   color: #fff;
   text-decoration: none;
   margin-left: 20px;
+  transition: all 0.3s;
 }
 
 .navbar-left a:hover {
   color: #00f;
-  transition: all 0.3s;
 }
 
 .navbar-right {
@@ -82,7 +82,7 @@ button.get-started:hover, .login-btn:hover {
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1554284126-aa88f22d8b74') no-repeat center center/cover;
 }
 
-.hero h1 {
+.hero h2 {
   font-size: 2.5rem;
 }
 
@@ -164,7 +164,7 @@ form input:focus, form select:focus, form textarea:focus {
     height: 35px;
   }
 
-  .hero h1 {
+  .hero h2 {
     font-size: 2rem;
   }
 
