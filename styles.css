@@ -235,4 +235,9 @@ body {
   .hero h1 { font-size: 2.2rem; }
   .navbar { padding: 10px 25px; }
   .instagram-btn { bottom: 15px; left: 15px; width: 35px; height: 35px; }
+  .navbar-left a::after,
+  .navbar-right .get-started::after,
+  .navbar-right .login-btn::after {
+    font-size: 3rem;
+  }
 }
