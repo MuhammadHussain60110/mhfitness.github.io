@@ -22,6 +22,7 @@ img {
   height: auto;
   display: block;
   margin: 20px auto;
+  border-radius: 10px;
 }
 
 /* ===== Navbar ===== */
@@ -38,18 +39,18 @@ img {
 
 .navbar-left h1 {
   margin: 0;
-  color: #fff; /* White heading */
+  color: #fff;
 }
 
 .navbar-left a {
-  color: #fff; /* White links */
+  color: #fff;
   text-decoration: none;
   margin-left: 20px;
   transition: all 0.3s;
 }
 
 .navbar-left a:hover {
-  color: #00f; /* Blue on hover */
+  color: #00f;
 }
 
 .navbar-right {
@@ -79,26 +80,31 @@ button.get-started:hover, .login-btn:hover {
 /* ===== Hero Section ===== */
 .hero {
   text-align: center;
-  padding: 60px 20px;
-  background-color: #0d0d0d;
+  padding: 100px 20px 50px;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  color: #fff;
 }
 
 .hero h2 {
   font-size: 2.5rem;
-  color: #00f;
   margin-bottom: 20px;
+  color: #00f;
 }
 
 .hero p {
   font-size: 1.2rem;
-  color: #ccc;
   margin-bottom: 20px;
+  color: #ccc;
 }
 
 .hero button {
   background-color: #00f;
   color: #fff;
-  padding: 10px 20px;
+  padding: 10px 25px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -107,59 +113,44 @@ button.get-started:hover, .login-btn:hover {
 }
 
 .hero button:hover {
-  background-color: #0055ff;
   transform: scale(1.05);
+  background-color: #0055ff;
+}
+
+/* Hero Image Wrapper */
+.hero-image-wrapper {
+  position: relative;
+  max-width: 1000px;
+  margin: 30px auto 0;
+  border-radius: 10px;
+  overflow: hidden;
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+.hero-image-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 255, 0.1);
+  pointer-events: none;
 }
 
 .hero-image-wrapper img {
   width: 100%;
-  max-width: 1200px;
-  height: auto;
-  border-radius: 10px;
-}
-
-/* ===== Sections ===== */
-.section {
-  padding: 60px 20px;
-  max-width: 1000px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-/* ===== Training Image ===== */
-.training-image-wrapper {
-  position: relative;
-  max-width: 800px;
-  margin: 20px auto;
-  border-radius: 10px;
-  overflow: hidden;
-  animation: fadeInUp 1.5s ease forwards;
-}
-
-.training-image-wrapper::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 255, 0.1);
-  pointer-events: none;
-}
-
-.training-image-wrapper img {
-  width: 100%;
   height: auto;
   display: block;
-  border-radius: 10px;
   transition: transform 0.5s ease;
+  border-radius: 10px;
 }
 
-.training-image-wrapper img:hover {
+.hero-image-wrapper img:hover {
   transform: scale(1.05);
 }
 
-/* Motivation Image */
-.motivation-image-wrapper {
+/* ===== Section Images ===== */
+.section-image-wrapper {
   position: relative;
   max-width: 800px;
   margin: 20px auto;
@@ -168,17 +159,17 @@ button.get-started:hover, .login-btn:hover {
   animation: fadeInUp 1.5s ease forwards;
 }
 
-.motivation-image-wrapper::before {
+.section-image-wrapper::before {
   content: "";
   position: absolute;
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 255, 0.1);
+  background: rgba(0,0,255,0.1);
   pointer-events: none;
 }
 
-.motivation-image-wrapper img {
+.section-image-wrapper img {
   width: 100%;
   height: auto;
   display: block;
@@ -186,7 +177,7 @@ button.get-started:hover, .login-btn:hover {
   transition: transform 0.5s ease;
 }
 
-.motivation-image-wrapper img:hover {
+.section-image-wrapper img:hover {
   transform: scale(1.05);
 }
 
@@ -212,16 +203,10 @@ button.get-started:hover, .login-btn:hover {
   transform: scale(1.2);
 }
 
-/* ===== Animation Keyframes ===== */
+/* ===== Animation ===== */
 @keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 /* ===== Mobile Adjustments ===== */
@@ -230,23 +215,15 @@ button.get-started:hover, .login-btn:hover {
     flex-direction: column;
     align-items: flex-start;
   }
-
   .navbar-left a {
     margin-left: 0;
     margin-top: 10px;
   }
-
-  .hero h2 {
-    font-size: 2rem;
-  }
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .training-image-wrapper, .motivation-image-wrapper {
+  .hero h2 { font-size: 2rem; }
+  .hero p { font-size: 1rem; }
+  .hero-image-wrapper, .section-image-wrapper {
     max-width: 90%;
   }
-
   .instagram-btn {
     bottom: 15px;
     left: 15px;
