@@ -21,7 +21,7 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 20px 0;
+  margin: 20px auto;
 }
 
 /* ===== Navbar ===== */
@@ -78,21 +78,45 @@ button.get-started:hover, .login-btn:hover {
 /* ===== Hero Section ===== */
 .hero {
   text-align: center;
-  padding: 100px 20px;
-  background: #0d0d0d url('https://images.unsplash.com/photo-1598970434795-0c54fe7c0642?fit=crop&w=1200&q=80') no-repeat center center/cover;
+  padding: 60px 20px;
+  background-color: #0d0d0d; /* Black background */
+  color: #fff;
 }
 
 .hero h2 {
   font-size: 2.5rem;
+  color: #00f; /* Blue highlight */
+  margin-bottom: 20px;
 }
 
 .hero p {
   font-size: 1.2rem;
-  margin: 20px auto;
+  color: #ccc;
+  margin-bottom: 20px;
 }
 
 .hero button {
-  margin-top: 20px;
+  background-color: #00f;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-bottom: 30px;
+}
+
+.hero button:hover {
+  background-color: #0055ff;
+  transform: scale(1.05);
+}
+
+.hero img {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  border-radius: 10px;
+  margin: 0 auto;
 }
 
 /* ===== Sections ===== */
@@ -157,19 +181,18 @@ form input:focus, form select:focus, form textarea:focus {
     margin-top: 10px;
   }
 
+  .hero h2 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+
   .instagram-btn {
     bottom: 15px;
     left: 15px;
     width: 35px;
     height: 35px;
-  }
-
-  .hero h2 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
   }
 }
 
