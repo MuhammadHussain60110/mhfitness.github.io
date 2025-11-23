@@ -74,28 +74,28 @@ body {
 
 /* HERO SECTION */
 .hero {
-  background: linear-gradient(to right, #000, #111), url('https://images.unsplash.com/photo-1593079831268-3381b0db4a77');
-  background-size: cover;
-  background-position: center;
+  position: relative;
   text-align: center;
   padding: 150px 20px 100px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: relative;
+  color: white;
+  overflow: hidden;
 }
 
-.hero::after {
-  content: "";
+.hero-bg {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: url('https://images.unsplash.com/photo-1599058917216-44c2b2a1d051') center/cover no-repeat;
+  opacity: 0.15; /* light opacity for subtle effect */
+  z-index: 0;
 }
 
 .hero h1, .hero p, .hero button {
   position: relative;
-  z-index: 1;
+  z-index: 1; /* text on top */
   opacity: 0;
   transform: translateY(30px);
   transition: all 1s ease;
@@ -112,6 +112,7 @@ body {
   font-size: 3rem;
   color: #00A8FF;
   margin-bottom: 15px;
+  font-weight: 700;
 }
 
 .hero p {
@@ -129,6 +130,11 @@ body {
   padding: 12px 28px;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.hero button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00A8FF;
 }
 
 /* SECTION STYLING */
