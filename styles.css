@@ -10,6 +10,7 @@ body {
 
 h1, h2 {
   margin: 0 0 10px;
+  color: #00f; /* Blue highlights */
 }
 
 p {
@@ -41,14 +42,14 @@ img {
 }
 
 .navbar-left a {
-  color: #fff;
+  color: #00f;
   text-decoration: none;
   margin-left: 20px;
   transition: all 0.3s;
 }
 
 .navbar-left a:hover {
-  color: #00f;
+  color: #55f;
 }
 
 .navbar-right {
@@ -79,7 +80,8 @@ button.get-started:hover, .login-btn:hover {
 .hero {
   text-align: center;
   padding: 100px 20px;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1554284126-aa88f22d8b74') no-repeat center center/cover;
+  background: #0d0d0d url('https://images.unsplash.com/photo-1554284126-aa88f22d8b74') no-repeat center center/cover;
+  position: relative;
 }
 
 .hero h2 {
@@ -103,7 +105,7 @@ button.get-started:hover, .login-btn:hover {
   text-align: center;
 }
 
-/* ===== Forms (Join/Login) ===== */
+/* ===== Forms ===== */
 form {
   display: flex;
   flex-direction: column;
