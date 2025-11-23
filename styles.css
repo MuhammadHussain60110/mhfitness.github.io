@@ -157,24 +157,34 @@ body {
   .hero h1 { font-size: 2.2rem; }
   .navbar { padding: 10px 25px; }
 }
-/* Instagram floating button - smaller version */
+/* Instagram floating button - default (desktop) */
 .instagram-btn {
-  position: fixed;      /* screen par hamesha visible */
-  bottom: 20px;         /* neeche se distance */
-  left: 20px;           /* left side se distance */
-  width: 40px;          /* chhota size */
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 40px;
   height: 40px;
-  z-index: 1000;        /* sabke upar rahe */
+  z-index: 1000;
 }
 
 .instagram-btn img {
   width: 100%;
   height: 100%;
-  border-radius: 50%;   /* round icon */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3); /* thoda soft shadow */
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
   transition: transform 0.3s;
 }
 
 .instagram-btn:hover img {
-  transform: scale(1.2); /* hover effect */
+  transform: scale(1.2);
+}
+
+/* Mobile friendly adjustments */
+@media screen and (max-width: 768px) {
+  .instagram-btn {
+    bottom: 15px;   /* thoda neeche adjust */
+    left: 15px;     /* thoda left adjust */
+    width: 35px;    /* chhota size */
+    height: 35px;
+  }
 }
