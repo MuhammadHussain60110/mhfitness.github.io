@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <title>Welcome To The Gym World Of MH</title>
   <link rel="stylesheet" href="styles.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
   <nav class="navbar">
+
+    <!-- LEFT SIDE LOGO + DESKTOP LINKS -->
     <div class="navbar-left">
       <h2>Muhammad Hussain Fitness</h2>
       <a href="#about">About</a>
@@ -17,53 +18,78 @@
       <a href="#motivation">Motivation</a>
       <a href="#contact">Contact</a>
     </div>
-    <div class="navbar-right">
-      <!-- Join Now Button -->
-<button class="get-started" onclick="window.location.href='join.html'">Join Now</button>
 
-<!-- Login Button -->
-<a href="login.html" class="login-btn">Log In</a>
+    <!-- RIGHT SIDE BUTTONS -->
+    <div class="navbar-right">
+      <button class="get-started" onclick="window.location.href='join.html'">Join Now</button>
+      <a href="login.html" class="login-btn">Log In</a>
+    </div>
+
+    <!-- HAMBURGER ICON (mobile only) -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
 
   </nav>
 
+  <!-- MOBILE DROPDOWN MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" onclick="toggleMenu()">About</a>
+    <a href="#training" onclick="toggleMenu()">Training</a>
+    <a href="#motivation" onclick="toggleMenu()">Motivation</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+    <a href="join.html">Join Now</a>
+    <a href="login.html">Log In</a>
+  </div>
+
+  <!-- HERO SECTION -->
   <section class="hero" id="home">
     <h1>Welcome To The Gym World Of <br>Muhammad Hussain Fitness</h1>
     <p>Transform your body. Transform your life.<br>Push harder than yesterday if you want a different tomorrow.</p>
     <button onclick="document.querySelector('#training').scrollIntoView({ behavior: 'smooth' });">Start Training</button>
   </section>
 
+  <!-- ABOUT -->
   <section class="section" id="about">
     <h2>About Our Gym</h2>
     <p>We’re not just a gym — we’re a community of athletes, dreamers, and achievers. Whether you’re starting your fitness journey or taking it to the next level, our mission is to help you unleash your full potential.</p>
     <img src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74" alt="Gym Equipment">
-<section class="section" id="training">
+  </section>
+
+  <!-- TRAINING -->
+  <section class="section" id="training">
     <h2>Training Programs</h2>
     <p>From intense strength sessions to endurance training, we offer customized plans that fit your body and your goals. Every rep counts — and every day brings you closer to greatness.</p>
     <img src="https://images.unsplash.com/photo-1579758629934-095f8ab13908" alt="Training Session">
   </section>
 
-
-   
-  </section>
-
- <section class="section" id="motivation">
+  <!-- MOTIVATION -->
+  <section class="section" id="motivation">
     <h2>Stay Motivated</h2>
     <p>"Success isn’t always about greatness. It’s about consistency. Consistent hard work gains success. Greatness will come."</p>
     <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438" alt="Motivational Gym Image">
   </section>
 
-   <section class="section" id="contact">
+  <!-- CONTACT -->
+  <section class="section" id="contact">
     <h2>Join the Movement</h2>
     <p>Ready to take the first step toward your best self? Join our gym family today and let’s make every day count.</p>
-    <button class="get-started">Join Now</button>
+    <button class="get-started" onclick="window.location.href='join.html'">Join Now</button>
   </section>
+
   <!-- Instagram Floating Button -->
-<a href="https://www.instagram.com/m.hussainshaikhh/" target="_blank" class="instagram-btn">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
-</a>
+  <a href="https://www.instagram.com/m.hussainshaikhh/" target="_blank" class="instagram-btn">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+  </a>
 
-
+  <!-- JS FOR MOBILE MENU -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("mobileMenu").classList.toggle("active");
+    }
+  </script>
 
 </body>
-
 </html>
