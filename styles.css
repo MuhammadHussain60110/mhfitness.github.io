@@ -1,4 +1,4 @@
-/* ================== General Styles ================== */
+/* styles.css */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -8,7 +8,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ================== Navbar ================== */
 .navbar {
   background: #000;
   display: flex;
@@ -28,27 +27,29 @@ body {
   color: #004de6;
 }
 
-/* Desktop nav */
-.nav-desktop {
-  display: flex;
-  gap: 10px;
-}
-.nav-desktop a,
-.nav-desktop button {
-  font-size: 15px;
-  color: #ccc;
+.navbar-left a, .navbar-right a {
   text-decoration: none;
+  color: #ccc;
+  margin: 0 10px;
   transition: 0.3s;
+  font-size: 15px;
 }
-.nav-desktop a:hover,
-.nav-desktop button:hover {
+
+.navbar-left a:hover, .navbar-right a:hover {
   color: #004de6;
-  transform: scale(1.05);
+  transform: scale(1.1);
+}
+
+.navbar-right{
+  display: flex;
+  align-items:center;
+  gap: 10px;
+  margin-right: 70px;
 }
 
 .get-started {
   background: #004de6;
-  color: #fff;
+  color: white;
   border: none;
   border-radius: 25px;
   padding: 8px 18px;
@@ -56,64 +57,11 @@ body {
   transition: 0.3s;
 }
 
-/* Hamburger menu */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
-.hamburger .line {
-  width: 25px;
-  height: 3px;
-  background: white;
-  transition: all 0.3s ease;
-}
-
-/* Mobile nav */
-.nav-mobile {
-  display: none; /* desktop pe hide */
-  flex-direction: column;
-  gap: 10px;
-  position: absolute;
-  top: 70px;
-  right: 20px;
-  background: #000;
-  padding: 10px;
-  border-radius: 5px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease;
-  z-index: 999;
-}
-.nav-mobile a,
-.nav-mobile button {
-  color: #ccc;
-  text-align: center;
-  display: block;
-}
-.nav-mobile a:hover,
-.nav-mobile button:hover {
-  color: #004de6;
+.get-started:hover {
+  background: #004de6;
   transform: scale(1.05);
 }
-.nav-mobile.show {
-  display: flex;
-  max-height: 500px;
-}
 
-/* Hamburger animation */
-.hamburger.active .line:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger.active .line:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active .line:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* ================== Hero Section ================== */
 .hero {
   background: linear-gradient(to right, #000, #1a1a1a);
   text-align: center;
@@ -127,60 +75,71 @@ body {
   background-position: center;
   position: relative;
 }
+
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.7);
 }
-.hero h1,
-.hero p,
-.hero button {
+
+.hero h1, .hero p, .hero button {
   position: relative;
   z-index: 1;
 }
+
 .hero h1 {
   font-size: 3rem;
   color: #004de6;
   margin-bottom: 15px;
 }
+
 .hero p {
+  color: #fff;
   font-size: 1.2rem;
   margin-bottom: 30px;
 }
+
 .hero button {
-  background: #004de6;
+  background-color: #004de6;
+  border: none;
+  color: white;
+  font-size: 1rem;
   border-radius: 30px;
   padding: 12px 28px;
-  border: none;
-  color: #fff;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
 }
+
 .hero button:hover {
+  background-color:#004de6;
   transform: scale(1.05);
 }
 
-/* ================== Sections ================== */
 .section {
   text-align: center;
   padding: 100px 20px;
   background: #111;
 }
+
 .section:nth-child(even) {
   background: #1a1a1a;
 }
+
 .section h2 {
   color: #004de6;
   margin-bottom: 20px;
   font-size: 2rem;
 }
+
 .section p {
   color: #ddd;
   max-width: 700px;
   margin: 0 auto;
+  font-size: 1rem;
   line-height: 1.7;
 }
+
 .section img {
   width: 80%;
   max-width: 500px;
@@ -189,11 +148,16 @@ body {
   box-shadow: 0 0 20px rgba(0, 102, 255, 0.4);
   transition: transform 0.4s;
 }
+
 .section img:hover {
   transform: scale(1.05);
 }
 
-/* ================== Instagram ================== */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.2rem; }
+  .navbar { padding: 10px 25px; }
+}
+/* Instagram floating button - default (desktop) */
 .instagram-btn {
   position: fixed;
   bottom: 20px;
@@ -202,56 +166,25 @@ body {
   height: 40px;
   z-index: 1000;
 }
+
 .instagram-btn img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
   transition: transform 0.3s;
 }
+
 .instagram-btn:hover img {
   transform: scale(1.2);
 }
 
-/* ================== Media Queries ================== */
-@media (max-width: 768px) {
-  .nav-desktop {
-    display: none !important; /* hide desktop nav on mobile */
-  }
-  .hamburger {
-    display: flex !important;
-  }
-  .nav-mobile {
-    display: flex !important;
-  }
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-  .navbar {
-    padding: 10px 25px;
-  }
+/* Mobile friendly adjustments */
+@media screen and (max-width: 768px) {
   .instagram-btn {
-    bottom: 15px;
-    left: 15px;
-    width: 35px;
+    bottom: 15px;   /* thoda neeche adjust */
+    left: 15px;     /* thoda left adjust */
+    width: 35px;    /* chhota size */
     height: 35px;
   }
 }
-
-/* ================== JS ================== */
-<script>
-const hamburger = document.querySelector('.hamburger');
-const navMobile = document.querySelector('.nav-mobile');
-
-hamburger.addEventListener('click', (e) => {
-  e.stopPropagation();
-  navMobile.classList.toggle('show');
-  hamburger.classList.toggle('active');
-});
-
-document.addEventListener('click', (e) => {
-  if (navMobile.classList.contains('show') && !navMobile.contains(e.target) && !hamburger.contains(e.target)) {
-    navMobile.classList.remove('show');
-    hamburger.classList.remove('active');
-  }
-});
-</script>
