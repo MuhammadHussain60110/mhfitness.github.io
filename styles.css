@@ -1,4 +1,4 @@
-/* styles.css */
+/* GENERAL BODY */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -8,6 +8,7 @@ body {
   overflow-x: hidden;
 }
 
+/* NAVBAR */
 .navbar {
   background: #000;
   display: flex;
@@ -40,13 +41,14 @@ body {
   transform: scale(1.1);
 }
 
-.navbar-right{
+.navbar-right {
   display: flex;
   align-items:center;
   gap: 10px;
   margin-right: 70px;
 }
 
+/* BUTTONS */
 .get-started {
   background: #004de6;
   color: white;
@@ -58,10 +60,51 @@ body {
 }
 
 .get-started:hover {
-  background: #004de6;
   transform: scale(1.05);
 }
 
+/* HAMBURGER ICON */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+}
+
+/* MOBILE MENU */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: #000;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  transition: max-height 0.3s ease;
+}
+
+.mobile-menu a {
+  padding: 12px 0;
+  color: #ccc;
+  font-size: 16px;
+  display: block;
+}
+
+.mobile-menu a:hover {
+  color: #004de6;
+}
+
+.mobile-menu.active {
+  display: flex;
+}
+
+/* HERO */
 .hero {
   background: linear-gradient(to right, #000, #1a1a1a);
   text-align: center;
@@ -80,7 +123,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0,0,0,0.7);
 }
 
 .hero h1, .hero p, .hero button {
@@ -112,10 +155,10 @@ body {
 }
 
 .hero button:hover {
-  background-color:#004de6;
   transform: scale(1.05);
 }
 
+/* SECTIONS */
 .section {
   text-align: center;
   padding: 100px 20px;
@@ -153,11 +196,7 @@ body {
   transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
-  .hero h1 { font-size: 2.2rem; }
-  .navbar { padding: 10px 25px; }
-}
-/* Instagram floating button - default (desktop) */
+/* INSTAGRAM BTN */
 .instagram-btn {
   position: fixed;
   bottom: 20px;
@@ -179,12 +218,28 @@ body {
   transform: scale(1.2);
 }
 
-/* Mobile friendly adjustments */
+/* MOBILE RESPONSIVE */
 @media screen and (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .navbar-right {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
   .instagram-btn {
-    bottom: 15px;   /* thoda neeche adjust */
-    left: 15px;     /* thoda left adjust */
-    width: 35px;    /* chhota size */
+    bottom: 15px;
+    left: 15px;
+    width: 35px;
     height: 35px;
   }
 }
