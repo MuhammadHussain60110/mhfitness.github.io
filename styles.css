@@ -58,7 +58,7 @@ body {
 
 /* Media Query for mobile */
 @media (max-width: 768px) {
-  .nav-desktop { display: none; }
+  .nav-desktop { display: none !important; }
   .hamburger { display: flex; }
 }
 
