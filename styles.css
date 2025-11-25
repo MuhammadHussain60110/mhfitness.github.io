@@ -78,7 +78,7 @@ body {
   border-radius: 5px;
 }
 
-/* MOBILE MENU */
+/* MOBILE DROPDOWN MENU */
 .mobile-menu {
   display: none;
   flex-direction: column;
@@ -220,16 +220,17 @@ body {
 
 /* MOBILE RESPONSIVE */
 @media screen and (max-width: 768px) {
-  .navbar {
-    padding: 10px 20px;
-  }
 
+  /* Hide desktop links and buttons */
+  .navbar-left a,
   .navbar-right {
     display: none;
   }
 
+  /* Hamburger icon right side */
   .hamburger {
     display: flex;
+    margin-left: auto;
   }
 
   .hero h1 {
