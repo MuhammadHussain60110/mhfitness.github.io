@@ -8,9 +8,8 @@
 </head>
 <body>
 
+  <!-- NAVIGATION -->
   <nav class="navbar">
-
-    <!-- LEFT SIDE LOGO + DESKTOP LINKS -->
     <div class="navbar-left">
       <h2>Muhammad Hussain Fitness</h2>
       <a href="#about">About</a>
@@ -19,19 +18,17 @@
       <a href="#contact">Contact</a>
     </div>
 
-    <!-- RIGHT SIDE BUTTONS -->
     <div class="navbar-right">
       <button class="get-started" onclick="window.location.href='join.html'">Join Now</button>
       <a href="login.html" class="login-btn">Log In</a>
     </div>
 
-    <!-- HAMBURGER ICON (mobile only) -->
+    <!-- HAMBURGER ICON FOR MOBILE -->
     <div class="hamburger" onclick="toggleMenu()">
       <div></div>
       <div></div>
       <div></div>
     </div>
-
   </nav>
 
   <!-- MOBILE DROPDOWN MENU -->
@@ -79,12 +76,12 @@
     <button class="get-started" onclick="window.location.href='join.html'">Join Now</button>
   </section>
 
-  <!-- Instagram Floating Button -->
+  <!-- INSTAGRAM BUTTON -->
   <a href="https://www.instagram.com/m.hussainshaikhh/" target="_blank" class="instagram-btn">
     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
   </a>
 
-  <!-- JS FOR MOBILE MENU -->
+  <!-- MOBILE MENU TOGGLE SCRIPT -->
   <script>
     function toggleMenu() {
       document.getElementById("mobileMenu").classList.toggle("active");
