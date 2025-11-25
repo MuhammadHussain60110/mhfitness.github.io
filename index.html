@@ -1,105 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Welcome To The Gym World Of MH</title>
-  <link rel="stylesheet" href="styles.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Muhammad Hussain Fitness</title>
+<link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
+<!-- NAVBAR -->
+<header class="navbar">
 
-    <!-- Hamburger Menu -->
-    <div class="hamburger" onclick="toggleMenu()">
-      <div class="line1"></div>
-      <div class="line2"></div>
-      <div class="line3"></div>
+    <!-- HAMBURGER (ONLY MOBILE) -->
+    <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
     </div>
 
-    <!-- Logo -->
-    <h2 class="logo">Muhammad Hussain Fitness</h2>
-
-    <!-- Dropdown Menu -->
-    <div id="mobileMenu" class="dropdown-menu">
-      <a href="#about">About</a>
-      <a href="#training">Training</a>
-      <a href="#motivation">Motivation</a>
-      <a href="#contact">Contact</a>
+    <!-- LEFT NAV (DESKTOP) -->
+    <div class="navbar-left">
+        <h2>Muhammad Hussain Fitness</h2>
+        <a href="#about">About</a>
+        <a href="#training">Training</a>
+        <a href="#motivation">Motivation</a>
+        <a href="#contact">Contact</a>
     </div>
 
-  </nav>
+    <!-- RIGHT NAV (DESKTOP) -->
+    <div class="navbar-right">
+        <button class="get-started" onclick="window.location.href='join.html'">Join Now</button>
+        <a href="login.html" class="login-btn">Log In</a>
+    </div>
+
+    <!-- MOBILE DROPDOWN -->
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="#about">About</a>
+        <a href="#training">Training</a>
+        <a href="#motivation">Motivation</a>
+        <a href="#contact">Contact</a>
+        <a href="join.html">Join Now</a>
+        <a href="login.html">Log In</a>
+    </nav>
+
+</header>
 
 
-  <!-- HERO SECTION -->
-  <section class="hero" id="home">
-    <h1>Welcome To The Gym World Of <br>Muhammad Hussain Fitness</h1>
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+    <h1>Welcome To The Gym World Of<br>Muhammad Hussain Fitness</h1>
     <p>Transform your body. Transform your life.<br>Push harder than yesterday if you want a different tomorrow.</p>
-    <button onclick="document.querySelector('#training').scrollIntoView({ behavior: 'smooth' });">Start Training</button>
-  </section>
+    <button onclick="document.querySelector('#training').scrollIntoView({ behavior: 'smooth' });">
+        Start Training
+    </button>
+</section>
 
-
-  <!-- ABOUT SECTION -->
-  <section class="section" id="about">
+<!-- ABOUT -->
+<section class="section" id="about">
     <h2>About Our Gym</h2>
-    <p>We’re not just a gym — we’re a community of athletes, dreamers, and achievers. Whether you’re starting your fitness journey or taking it to the next level, our mission is to help you unleash your full potential.</p>
+    <p>We’re not just a gym — we’re a community of athletes, dreamers, and achievers.</p>
     <img src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74" alt="Gym Equipment">
-  </section>
+</section>
 
-
-  <!-- TRAINING -->
-  <section class="section" id="training">
+<!-- TRAINING -->
+<section class="section" id="training">
     <h2>Training Programs</h2>
-    <p>From intense strength sessions to endurance training, we offer customized plans that fit your body and your goals. Every rep counts — and every day brings you closer to greatness.</p>
+    <p>Every rep counts — and every day brings you closer to greatness.</p>
     <img src="https://images.unsplash.com/photo-1579758629934-095f8ab13908" alt="Training Session">
-  </section>
+</section>
 
-
-  <!-- MOTIVATION -->
-  <section class="section" id="motivation">
+<!-- MOTIVATION -->
+<section class="section" id="motivation">
     <h2>Stay Motivated</h2>
-    <p>"Success isn’t always about greatness. It’s about consistency. Consistent hard work gains success. Greatness will come."</p>
-    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438" alt="Motivational Gym Image">
-  </section>
+    <p>"Success isn’t always about greatness. It's about consistency."</p>
+    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438" alt="Motivation Image">
+</section>
 
-
-  <!-- CONTACT -->
-  <section class="section" id="contact">
+<!-- CONTACT -->
+<section class="section" id="contact">
     <h2>Join the Movement</h2>
-    <p>Ready to take the first step toward your best self? Join our gym family today and let’s make every day count.</p>
     <button class="get-started">Join Now</button>
-  </section>
+</section>
 
-
-  <!-- Instagram Button -->
-  <a href="https://www.instagram.com/m.hussainshaikhh/" target="_blank" class="instagram-btn">
+<!-- INSTAGRAM BUTTON -->
+<a href="https://www.instagram.com/m.hussainshaikhh/" target="_blank" class="instagram-btn">
     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
-  </a>
-
-
-  <!-- DROPDOWN SCRIPT -->
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("mobileMenu");
-      const hamburger = document.querySelector(".hamburger");
-
-      menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-      hamburger.classList.toggle("active");
-    }
-
-    // Auto-close when clicking outside
-    document.addEventListener("click", function (e) {
-      const menu = document.getElementById("mobileMenu");
-      const burger = document.querySelector(".hamburger");
-
-      if (!burger.contains(e.target) && !menu.contains(e.target)) {
-        menu.style.display = "none";
-        burger.classList.remove("active");
-      }
-    });
-  </script>
+</a>
 
 </body>
 </html>
