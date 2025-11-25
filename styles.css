@@ -1,117 +1,190 @@
-/* Basic Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* styles.css */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #111;
-    color: #fff;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0d0d0d;
+  color: #fff;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-/* Navbar */
 .navbar {
-    width: 100%;
-    background-color: #000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    position: relative;
-    overflow: visible; /* Important for dropdown */
+  background: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 102, 255, 0.3);
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #00f; /* Blue theme */
+.navbar-left h2 {
+  margin: 0;
+  font-weight: 700;
+  color: #004de6;
 }
 
-/* Desktop Menu */
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+.navbar-left a, .navbar-right a {
+  text-decoration: none;
+  color: #ccc;
+  margin: 0 10px;
+  transition: 0.3s;
+  font-size: 15px;
 }
 
-.nav-links li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 8px 12px;
-    transition: 0.3s;
+.navbar-left a:hover, .navbar-right a:hover {
+  color: #004de6;
+  transform: scale(1.1);
 }
 
-.nav-links li a:hover {
-    background-color: #00f;
-    border-radius: 5px;
+.navbar-right{
+  display: flex;
+  align-items:center;
+  gap: 10px;
+  margin-right: 70px;
 }
 
-/* Join / Login Buttons */
-.join-btn {
-    background-color: #00f;
-    padding: 5px 10px;
-    border-radius: 5px;
+.get-started {
+  background: #004de6;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 18px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.login-btn {
-    border: 1px solid #00f;
-    padding: 5px 10px;
-    border-radius: 5px;
+.get-started:hover {
+  background: #004de6;
+  transform: scale(1.05);
 }
 
-/* Hamburger */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
+.hero {
+  background: linear-gradient(to right, #000, #1a1a1a);
+  text-align: center;
+  padding: 150px 20px 100px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url('https://images.unsplash.com/photo-1593079831268-3381b0db4a77');
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
-.hamburger .line {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
 }
 
-/* Mobile Dropdown Menu */
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 60px; /* Adjust according to navbar height */
-    right: 10px; /* Shift right */
-    background-color: #000;
-    width: 180px;
-    border: 1px solid #00f;
-    border-radius: 5px;
-    z-index: 1000;
-    flex-direction: column;
-    padding: 10px 0;
+.hero h1, .hero p, .hero button {
+  position: relative;
+  z-index: 1;
 }
 
-.dropdown-menu a {
-    display: block;
-    padding: 10px 15px;
-    color: #fff;
-    text-decoration: none;
+.hero h1 {
+  font-size: 3rem;
+  color: #004de6;
+  margin-bottom: 15px;
 }
 
-.dropdown-menu a:hover {
-    background-color: #00f;
+.hero p {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
 }
 
-/* Show menu when active */
-.dropdown-menu.active {
-    display: flex;
+.hero button {
+  background-color: #004de6;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 30px;
+  padding: 12px 28px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-/* Responsive */
+.hero button:hover {
+  background-color:#004de6;
+  transform: scale(1.05);
+}
+
+.section {
+  text-align: center;
+  padding: 100px 20px;
+  background: #111;
+}
+
+.section:nth-child(even) {
+  background: #1a1a1a;
+}
+
+.section h2 {
+  color: #004de6;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.section p {
+  color: #ddd;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.section img {
+  width: 80%;
+  max-width: 500px;
+  border-radius: 15px;
+  margin-top: 30px;
+  box-shadow: 0 0 20px rgba(0, 102, 255, 0.4);
+  transition: transform 0.4s;
+}
+
+.section img:hover {
+  transform: scale(1.05);
+}
+
 @media (max-width: 768px) {
-    .nav-links {
-        display: none; /* Hide desktop menu on mobile */
-    }
-    .hamburger {
-        display: flex;
-    }
+  .hero h1 { font-size: 2.2rem; }
+  .navbar { padding: 10px 25px; }
+}
+/* Instagram floating button - default (desktop) */
+.instagram-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  z-index: 1000;
+}
+
+.instagram-btn img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+
+.instagram-btn:hover img {
+  transform: scale(1.2);
+}
+
+/* Mobile friendly adjustments */
+@media screen and (max-width: 768px) {
+  .instagram-btn {
+    bottom: 15px;   /* thoda neeche adjust */
+    left: 15px;     /* thoda left adjust */
+    width: 35px;    /* chhota size */
+    height: 35px;
+  }
 }
