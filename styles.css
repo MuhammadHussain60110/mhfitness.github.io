@@ -40,9 +40,9 @@ body {
   transform: scale(1.1);
 }
 
-.navbar-right{
+.navbar-right {
   display: flex;
-  align-items:center;
+  align-items: center;
   gap: 10px;
   margin-right: 70px;
 }
@@ -157,13 +157,14 @@ body {
   .hero h1 { font-size: 2.2rem; }
   .navbar { padding: 10px 25px; }
 }
-/* Instagram floating button - default (desktop) */
+
+/* Instagram floating button (desktop & mobile) */
 .instagram-btn {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   z-index: 1000;
 }
 
@@ -179,12 +180,12 @@ body {
   transform: scale(1.2);
 }
 
-/* Mobile friendly adjustments */
+/* Mobile adjustments */
 @media screen and (max-width: 768px) {
   .instagram-btn {
-    bottom: 15px;   /* thoda neeche adjust */
-    left: 15px;     /* thoda left adjust */
-    width: 35px;    /* chhota size */
-    height: 35px;
+    bottom: 15px;
+    left: 15px;
+    width: 38px;
+    height: 38px;
   }
 }
