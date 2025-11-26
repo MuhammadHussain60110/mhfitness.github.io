@@ -1,7 +1,4 @@
-/* ================================
-   CSS PART (ALL STYLES)
-================================ */
-
+/* styles.css */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -61,6 +58,7 @@ body {
 }
 
 .get-started:hover {
+  background: #004de6;
   transform: scale(1.05);
 }
 
@@ -114,6 +112,7 @@ body {
 }
 
 .hero button:hover {
+  background-color:#004de6;
   transform: scale(1.05);
 }
 
@@ -154,7 +153,11 @@ body {
   transform: scale(1.05);
 }
 
-/* Instagram Floating Button */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.2rem; }
+  .navbar { padding: 10px 25px; }
+}
+/* Instagram floating button - default (desktop) */
 .instagram-btn {
   position: fixed;
   bottom: 20px;
@@ -176,64 +179,12 @@ body {
   transform: scale(1.2);
 }
 
-/* Hamburger Button */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
-
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background: white;
-  border-radius: 5px;
-}
-
-/* Mobile Menu */
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  right: -260px;
-  width: 260px;
-  height: 100%;
-  background: #000;
-  padding-top: 80px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding-left: 30px;
-  transition: .4s ease;
-  box-shadow: -2px 0 10px rgba(0,0,0,0.5);
-}
-
-.mobile-menu a, .mobile-menu button {
-  font-size: 18px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .navbar-right, .navbar-left a {
-    display: none;
-  }
-
-  .hamburger {
-    display: flex;
+/* Mobile friendly adjustments */
+@media screen and (max-width: 768px) {
+  .instagram-btn {
+    bottom: 15px;   /* thoda neeche adjust */
+    left: 15px;     /* thoda left adjust */
+    width: 35px;    /* chhota size */
+    height: 35px;
   }
 }
-
-
-/* =========================================
-   JS PART (INSIDE CSS FILE AS COMMENT)
-   Will run because HTML loads as JS also
-========================================= */
-
-*/
-
-/* JS START */
-function toggleMenu() {
-  const menu = document.getElementById("mobileMenu");
-  menu.style.right = menu.style.right === "0px" ? "-260px" : "0px";
-}
-/* JS END */
